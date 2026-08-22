@@ -2,12 +2,12 @@
 
 Maak unieke, printklare bingokaarten met je eigen foto's. De app werkt volledig in de browser: foto's worden niet naar een server geüpload.
 
-**Live versie:** https://fotobingo-maker.dennisdelphine.chatgpt.site
+**Website:** https://hobbit12b.github.io/bingo/
 
 ## Mogelijkheden
 
 - losse foto's of een complete map kiezen;
-- foto's bijsnijden, verschuiven, zoomen, draaien en hernoemen;
+- foto's verschuiven, zoomen, draaien en hernoemen;
 - unieke bingokaarten van 3 × 3, 4 × 4 of 5 × 5 maken;
 - één of twee kaarten per A4 printen of als pdf opslaan;
 - spelleidersblad en trekkaartjes maken;
@@ -17,7 +17,7 @@ Maak unieke, printklare bingokaarten met je eigen foto's. De app werkt volledig 
 
 ## Privacy
 
-Alle gekozen foto's blijven in de browser op het apparaat van de gebruiker. Ook een opgeslagen `.fotobingo`-bestand staat uitsluitend op de computer van de gebruiker. Zet zulke projectbestanden niet in deze openbare repository wanneer ze leerlingfoto's bevatten.
+Alle gekozen foto's blijven in de browser op het apparaat van de gebruiker. Ook een opgeslagen `.fotobingo`-bestand staat uitsluitend op de computer van de gebruiker. Zet projectbestanden met leerlingfoto's nooit in deze openbare repository.
 
 ## Lokaal starten
 
@@ -28,10 +28,10 @@ npm install
 npm run dev
 ```
 
-Open daarna de lokale URL die in de terminal wordt getoond.
-
-## Productiebuild
+## GitHub Pages bouwen
 
 ```bash
-npm run build
+npm run build:pages
 ```
+
+Een wijziging op de `main`-branch wordt automatisch naar GitHub Pages gepubliceerd.

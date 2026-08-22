@@ -1,0 +1,50 @@
+name: Publiceer Fotobingo Maker
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Broncode ophalen
+        uses: actions/checkout@v4
+      - name: Node instellen
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Onderdelen installeren
+        run: npm ci
+      - name: Website bouwen
+        run: npm run build:pages
+      - name: GitHub Pages instellen
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Website klaarzetten
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-pages
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Website publiceren
+        id: deployment
+        uses: actions/deploy-pages@v4
