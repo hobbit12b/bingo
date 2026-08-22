@@ -58,7 +58,10 @@ function BingoCard({ids,photos,title,gridSize,captions,cardNumber,freeCenter}:{i
   let pointer=0;
   return <article className={`bingo-card grid-${gridSize}`}>
     <div className="card-heading"><div><span>FOTOBINGO</span><h2>{title || "Fotobingo"}</h2></div><b>Kaart {cardNumber}</b></div>
-    <div className="bingo-grid" style={{gridTemplateColumns:`repeat(${gridSize}, 1fr)`}}>
+    <div className="bingo-grid" style={{
+      gridTemplateColumns:`repeat(${gridSize}, minmax(0, 1fr))`,
+      gridTemplateRows:`repeat(${gridSize}, minmax(0, 1fr))`,
+    }}>
       {Array.from({length:gridSize*gridSize}).map((_,index)=>{
         const isCenter=freeCenter&&gridSize%2===1&&index===Math.floor(gridSize*gridSize/2);
         if(isCenter) return <div className="bingo-cell free-cell" key={`free-${index}`}><Icon name="spark"/><b>VRIJ</b></div>;
