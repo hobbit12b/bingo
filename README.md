@@ -34,4 +34,4 @@ npm run dev
 npm run build:pages
 ```
 
-Een wijziging op de `main`-branch wordt automatisch naar GitHub Pages gepubliceerd.
+Iedere wijziging op de `main`-branch wordt automatisch gebouwd en gepubliceerd op het websiteadres hierboven.
