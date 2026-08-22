@@ -34,4 +34,4 @@ npm run dev
 npm run build:pages
 ```
 
-Iedere wijziging op de `main`-branch wordt automatisch gebouwd en gepubliceerd op het websiteadres hierboven.
+De gebouwde website staat in de map `docs`. GitHub Pages publiceert die map via de `main`-branch.
