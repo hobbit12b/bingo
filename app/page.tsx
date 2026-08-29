@@ -176,7 +176,7 @@ export default function Home(){
     if(isDrawing||drawn.length>=drawOrder.length)return;
     const nextId=drawOrder[drawn.length];
     setIsDrawing(true);
-    drawTimer.current=window.setTimeout(()=>{setDrawn(current=>[...current,nextId]);setIsDrawing(false);drawTimer.current=null;},700);
+    drawTimer.current=window.setTimeout(()=>{setDrawn(current=>[...current,nextId]);setIsDrawing(false);drawTimer.current=null;},2400);
   }
   function resetCaller(){stopDrawTimer();setIsDrawing(false);setDrawOrder(shuffle(photos.map(p=>p.id)));setDrawn([]);}
   function leaveCaller(){stopDrawTimer();setIsDrawing(false);setView("results");}
